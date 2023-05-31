@@ -5,8 +5,6 @@ import './Header.css'
 
 const Header = ({CityUrl, setLoading, day}) => {
 
-    // const Latitude = 18.5620072;
-    // const Longitude = 73.7708962;
     let name, state, country;
     const [city, setCity] = React.useState("")
 
@@ -25,14 +23,13 @@ const Header = ({CityUrl, setLoading, day}) => {
 
     React.useEffect(() => {
         getCityName();
-    }, [])
+    }, [CityUrl])
     
 
     return (
         <div className={day === "day" ? "header-container day-color" : "header-container night-color"}>
             <h1 className="header">{city}</h1>
         </div>
-
     )
 }
 

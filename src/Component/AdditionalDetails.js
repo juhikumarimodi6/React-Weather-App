@@ -14,7 +14,6 @@ const AdditionalDetails = ({result, day}) => {
         if(hours > 12) {
             hours = hours - 12 ;
         }
-        console.log(hours + ':' + minutes + ':' + seconds)
         return hours + ":" + minutes;
     }
 

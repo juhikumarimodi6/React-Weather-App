@@ -13,36 +13,28 @@ function App() {
   const [latitude, setLatitude] = React.useState()
   const [longitude, setLongitude] = React.useState()
   const [loading, setLoading] = React.useState(false)  
+  const [error, setError] = React.useState(false)
 
    const CityUrl = "http://api.openweathermap.org/geo/1.0/reverse?lat=" + latitude + "&lon=" + longitude + "&limit=1&appid=90a10e4ffd8bdfbff81c8fd659214773"
 
-  let latitudeTest, longitudeTest;
   const getGeoLocation = () => {
     if (navigator.geolocation) {
-      console.log("fetch coordinate start")
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          latitudeTest = position.coords.latitude;
-          longitudeTest = position.coords.longitude;
           setLatitude(position.coords.latitude);
           setLongitude(position.coords.longitude);
-          console.log("latitude:" + latitude + latitudeTest + position.coords.latitude)
-          console.log("longitude:" + longitude + longitudeTest + position.coords.longitude)
         }, 
         (error) => {
           console.error('Error getting current position:', error);
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser.');
     }
-    console.log("fetch coordinate end")
   }
 
   const getWeatherDetails = async () => {
       // try {
           setLoading(true);
-          console.log("inside get weather details")
     //   const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=90a10e4ffd8bdfbff81c8fd659214773&units=metric&cnt=20"
     //   const response = await fetch(url);
     //   const data = await response.json()
@@ -54,7 +46,6 @@ function App() {
     //   console.log(err)
     //   setError(true)
     // }
-    console.log("set result start")
      setResult(TestData)
      setLoading(false);
 
@@ -67,11 +58,10 @@ function App() {
       getWeatherDetails();
     }
     if(result !== "") {
-      setDay(result.list[0].sys.pod === "d" ? "day" : "night")
-      console.log("day" + day + result.list[0].sys.pod === "d" ? "day" : "night")
+      setDay((result.list[0].sys.pod === "d" )? "day" : "night")
     }
     
-  }, [])
+  }, [latitude, longitude, result])
 
   return (
     <div className={day === "day" ? "app-container day-image" : "app-container night-image"} >
