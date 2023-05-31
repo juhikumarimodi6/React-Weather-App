@@ -1,0 +1,44 @@
+.AdditionalDetails-container {
+    border:solid black;
+    display: flex;
+    margin:1%;
+    color:white;
+    border-radius: 5px;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.day-color {
+    background-color:rgb(67, 118, 238);
+  }
+  
+  .night-color {
+    background-color: rgb(20, 20, 57);
+  } 
+
+.header-details {
+    display: flex;
+    justify-content: left;
+    height: auto;
+    margin: 5%;
+}
+
+.details-container {
+    /* border:solid; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.details {
+    /* border:solid; */
+    width:200px;
+    text-align: center;
+    margin:2%;
+}
+
+.detail {
+    color:rgb(72, 70, 70)
+}
+

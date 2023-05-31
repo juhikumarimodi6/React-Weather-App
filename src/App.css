@@ -1,0 +1,40 @@
+.app-container {
+  display: flex;
+  height:98vh;
+  width:50vw;
+  margin: 0% auto ;
+  border-radius: 5px;
+  border:solid;
+  flex-direction: column;
+  /* background-image: url("https://img.freepik.com/free-vector/monsoon-rainfall-with-clouds-background_1017-32365.jpg?size=626&ext=jpg&ga=GA1.1.100971724.1670912755&semt=ais"); */
+  /* background-image: url("https://img.freepik.com/free-photo/white-cloud-blue-sky_74190-7709.jpg?size=626&ext=jpg&ga=GA1.1.100971724.1670912755&semt=ais"); */
+  background-size: cover;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.day-image {
+  /* background-image: url("https://img.freepik.com/free-photo/beautiful-sea-ocean-with-cloud-blue-sky_74190-6828.jpg?size=626&ext=jpg&ga=GA1.2.100971724.1670912755"); */
+  background-image: url("https://img.freepik.com/free-photo/white-cloud-blue-sky_74190-7709.jpg?size=626&ext=jpg&ga=GA1.1.100971724.1670912755&semt=ais");
+}
+
+.night-image {
+  background-image: url("https://img.freepik.com/free-vector/falling-stars-beautiful-night-background_23-2148273840.jpg?size=626&ext=jpg&ga=GA1.2.100971724.1670912755&semt=sph");
+}
+
+.rain-image {
+  background-image: url("https://img.freepik.com/free-vector/monsoon-rainfall-with-clouds-background_1017-32365.jpg?size=626&ext=jpg&ga=GA1.1.100971724.1670912755&semt=ais");
+}
+
+.loading {
+  color:white;
+  font-size: x-large;
+  align-items: center;
+  margin:auto;
+}
+
+@media only screen and (max-width:400px) {
+  .app-container {
+    width:95vw;
+  }
+}

@@ -1,0 +1,39 @@
+.hourlyforecast-container {
+    border:solid black;
+    display: flex;
+    margin:1%;
+    margin-top: 10%;
+    color:white;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.day-color {
+    background-color:rgb(67, 118, 238);
+}
+  
+.night-color {
+    background-color: rgb(20, 20, 57);
+} 
+
+.header-hourly {
+    display: flex;
+    justify-content: left;
+    height: auto;
+    margin: 5%;
+}
+
+.hourly-temp {
+    margin:1%;
+    display: flex;
+    overflow-x: scroll;
+}
+
+img {
+    width:50px;
+    margin:0px auto;
+}
+
+.hour {
+    text-align: center;
+}

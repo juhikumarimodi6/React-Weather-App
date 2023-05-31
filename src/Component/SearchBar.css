@@ -1,0 +1,32 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    border: solid;
+    /* width: 25vw; */
+    margin: auto;
+    margin-top: 1%;
+    border-radius: 5px;
+    display: none;
+}
+
+.search-input {
+    margin:0px;
+    border:none;
+    width:20vw;
+}
+
+.search-icons {
+    border: none;
+    background-color: rgb(196, 191, 191);
+}
+
+.search-icons:active { 
+    box-shadow: inset;
+    background-color: rgb(148, 146, 146);
+}
+
+@media only screen and (max-width:400px) {
+    .search-input {
+        width:60vw;
+    }
+}

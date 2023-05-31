@@ -1,0 +1,21 @@
+.weather-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    margin-top: 10%;
+}
+
+.temp {
+    border-radius: 5px;
+    font-size:xxx-large;
+    color: white;
+}
+
+.sup-degree {
+    font-size: medium;
+}
+
+.weather-description {
+    font-size:x-large;
+}

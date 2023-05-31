@@ -1,0 +1,22 @@
+.header-container {
+    position: sticky;
+    top: 0;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1%;
+    border-radius: 2px;
+    color:white;
+    margin-top: 0px;
+    align-items: center;
+}
+
+.day-color {
+    background-color:rgb(67, 118, 238);
+  }
+  
+  .night-color {
+    background-color: rgb(20, 20, 57);
+  } 
