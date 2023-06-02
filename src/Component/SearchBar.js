@@ -2,7 +2,7 @@ import React from "react";
 import { HiSearch } from "react-icons/hi";
 import './SearchBar.css'
 
-const SearchBar = ({input, setInput, setCity}) => {
+const SearchBar = ({input, setInput, setSearchCity}) => {
     const handleInput = (event) => {
         setInput(event.target.value)
     }
@@ -15,7 +15,7 @@ const SearchBar = ({input, setInput, setCity}) => {
 
     const UpdateCity = () => {
         if(input !== "") {
-            setCity(input);
+            setSearchCity(input);
             setInput("")
         }
     }
@@ -24,7 +24,7 @@ const SearchBar = ({input, setInput, setCity}) => {
         <div className="search-container">
             <input 
                 type = 'text'
-                placeholder="City Name..."
+                placeholder="Search City..."
                 value = {input}
                 onChange={(event) => handleInput(event)}
                 onKeyDown={(event) => handleEnter(event)}

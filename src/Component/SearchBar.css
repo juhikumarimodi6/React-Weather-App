@@ -1,18 +1,18 @@
 .search-container {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     border: solid;
     /* width: 25vw; */
-    margin: auto;
-    margin-top: 1%;
+    /* margin: auto; */
+    margin: 1%;
     border-radius: 5px;
-    display: none;
+    /* display: none; */
 }
 
 .search-input {
     margin:0px;
     border:none;
-    width:20vw;
+    width:10vw;
 }
 
 .search-icons {

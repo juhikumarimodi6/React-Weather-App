@@ -10,11 +10,11 @@
 
 .day-color {
     background-color:rgb(67, 118, 238);
-}
+  }
   
-.night-color {
+  .night-color {
     background-color: rgb(20, 20, 57);
-} 
+  } 
 
 .header-hourly {
     display: flex;

@@ -1,18 +1,19 @@
 import React from "react";
 import CityApiTestData from "./CityApiTestData";
+import SearchBar from './SearchBar'
 import './Header.css'
 
 
-const Header = ({CityUrl, setLoading, day}) => {
+const Header = ({CityUrl, setLoading, day, input, setInput, setSearchCity}) => {
 
     let name, state, country;
     const [city, setCity] = React.useState("")
 
     const getCityName = async () => {
         setLoading(true);
-        // const response = await fetch(CityUrl)
-        // const data = await response.json()
-        const data = CityApiTestData;
+        const response = await fetch(CityUrl)
+        const data = await response.json()
+        // const data = CityApiTestData;
         setLoading(false);
         console.log(data)
         name = data[0].name;
@@ -29,6 +30,11 @@ const Header = ({CityUrl, setLoading, day}) => {
     return (
         <div className={day === "day" ? "header-container day-color" : "header-container night-color"}>
             <h1 className="header">{city}</h1>
+            <SearchBar 
+                input = {input}
+                setInput = {setInput}
+                setSearchCity = {setSearchCity}
+            />
         </div>
     )
 }

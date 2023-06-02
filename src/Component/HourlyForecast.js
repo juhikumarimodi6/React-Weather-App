@@ -10,11 +10,9 @@ const HourlyForecast = ({result, day}) => {
                 {result.list.map((Hourdata, index) => {
                         const url = 'https://openweathermap.org/img/wn/' + Hourdata.weather[0].icon + '@2x.png'
                         const hour = Hourdata.dt_txt.slice(11,13)
-                        // const time = hour - 12;
                         const AmorPm = hour - 12 >= 0 ? "Pm" : "Am"
                         const hours = (hour % 12) || 12;
                         const finalTime = hours + AmorPm;
-                        // const finalTime = hour - 12 >= 0 ? hour - 12 + "Pm" : hour - 0 + "Am"
                         return <div key = {index} className="hour">
                                     <div>{finalTime}</div>
                                     <img src = {url} alt = "icon" />

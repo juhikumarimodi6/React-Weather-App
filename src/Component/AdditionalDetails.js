@@ -1,4 +1,5 @@
 import React from "react";
+import GetTime from "./GetTime";
 import './AdditionalDetails.css'
 
 const AdditionalDetails = ({result, day}) => {
@@ -6,16 +7,7 @@ const AdditionalDetails = ({result, day}) => {
     let sunrise = result.city.sunrise * 1000 + 198000000;
     let sunset = result.city.sunset * 1000 + 198000000;
 
-    const getTime = (timeStamp) => {
-        let date = new Date(timeStamp);
-        let hours = date.getUTCHours().toString().padStart(2,0)
-        let minutes = date.getUTCMinutes().toString().padStart(2,0)
-        let seconds = date.getUTCSeconds().toString().padStart(2,0)
-        if(hours > 12) {
-            hours = hours - 12 ;
-        }
-        return hours + ":" + minutes;
-    }
+    const getTime = (timeStamp) => GetTime(timeStamp)
 
     return (
         <div className={day === "day" ? "AdditionalDetails-container day-color" : "AdditionalDetails-container night-color"}>
