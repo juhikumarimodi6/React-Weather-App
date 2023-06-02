@@ -6,6 +6,7 @@ import HourlyForecast from './Component/HourlyForecast';
 import AdditionalDetails from './Component/AdditionalDetails';
 import GetGeoLocation from './Component/GetGeoLocation';
 import GetLanLon from './Component/GetLanLon';
+import GetWeatherDetails from './Component/GetWeatherDetails';
 import './App.css';
 
 function App() {
@@ -18,44 +19,10 @@ function App() {
   const [longitude, setLongitude] = React.useState(0)
   const [loading, setLoading] = React.useState(false)  
 
-   const CityUrl = "http://api.openweathermap.org/geo/1.0/reverse?lat=" + latitude + "&lon=" + longitude + "&limit=1&appid=90a10e4ffd8bdfbff81c8fd659214773"
+  const getGeoLocation = () => searchCity ? GetLanLon(searchCity, setLatitude, setLongitude) 
+                                            : GetGeoLocation(setLatitude, setLongitude, latitude, longitude) ;
 
-   const getGeoLocation = () => searchCity ? GetLanLon(searchCity, setLatitude, setLongitude) 
-                                            : GetGeoLocation(setLatitude, setLongitude, latitude, longitude) 
-
-  // const getGeoLocation = () => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(
-  //       (position) => {
-  //         setLatitude(position.coords.latitude);
-  //         setLongitude(position.coords.longitude);
-  //         console.log("Latitude: " + latitude)
-  //         console.log("Longitude: " + longitude)
-  //       }, 
-  //       (error) => {
-  //         console.error('Error getting current position:', error);
-  //       }
-  //     );
-  //   } else {
-  //   }
-  // }
-
-  const getWeatherDetails = async () => {
-    try {
-      console.log("inside getWeather details")
-      setLoading(true);
-      const url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=90a10e4ffd8bdfbff81c8fd659214773&units=metric&cnt=20"
-      const response = await fetch(url);
-      const data = await response.json()
-      // const data = TestData;
-      console.log(data)
-      setResult(data);
-      setDay((data.list[0].sys.pod === "d" )? "day" : "night")
-      setLoading(false);
-    } catch(error) {
-      console.error("error occured" + error)
-    }
-  }
+  const getWeatherDetails = () => GetWeatherDetails(setLoading, latitude, longitude, setResult, setDay);
 
   React.useEffect(() => {
     getGeoLocation();
@@ -64,18 +31,17 @@ function App() {
     }
   }, [latitude, longitude, searchCity])
 
-  console.log(searchCity)
-
   return (
     <div className={day === "day" ? "app-container day-image" : "app-container night-image"} >
       {result !== ""  && latitude && longitude ? 
       <><Header 
         setLoading = {setLoading}
         day = {day}
-        CityUrl = {CityUrl}
         input = {input}
         setInput = {setInput}
         setSearchCity = {setSearchCity}
+        latitude={latitude}
+        longitude={longitude}
       />
       <WeatherDetails 
         result = {result}
