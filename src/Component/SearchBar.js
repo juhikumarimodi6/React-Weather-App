@@ -34,6 +34,7 @@ const SearchBar = ({input, setInput, setSearchCity}) => {
                 className="search-icons" 
                 onClick={UpdateCity}
             />
+
         </div>
     )
 }

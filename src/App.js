@@ -4,6 +4,8 @@ import TestData from './Component/TestData';
 import WeatherDetails from './Component/WeatherDetails';
 import HourlyForecast from './Component/HourlyForecast';
 import AdditionalDetails from './Component/AdditionalDetails';
+import GetGeoLocation from './Component/GetGeoLocation';
+import GetLanLon from './Component/GetLanLon';
 import './App.css';
 
 function App() {
@@ -18,22 +20,25 @@ function App() {
 
    const CityUrl = "http://api.openweathermap.org/geo/1.0/reverse?lat=" + latitude + "&lon=" + longitude + "&limit=1&appid=90a10e4ffd8bdfbff81c8fd659214773"
 
-  const getGeoLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-          console.log("Latitude: " + latitude)
-          console.log("Longitude: " + longitude)
-        }, 
-        (error) => {
-          console.error('Error getting current position:', error);
-        }
-      );
-    } else {
-    }
-  }
+   const getGeoLocation = () => searchCity ? GetLanLon(searchCity, setLatitude, setLongitude) 
+                                            : GetGeoLocation(setLatitude, setLongitude, latitude, longitude) 
+
+  // const getGeoLocation = () => {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         setLatitude(position.coords.latitude);
+  //         setLongitude(position.coords.longitude);
+  //         console.log("Latitude: " + latitude)
+  //         console.log("Longitude: " + longitude)
+  //       }, 
+  //       (error) => {
+  //         console.error('Error getting current position:', error);
+  //       }
+  //     );
+  //   } else {
+  //   }
+  // }
 
   const getWeatherDetails = async () => {
     try {
@@ -57,7 +62,9 @@ function App() {
     if(latitude && longitude) {
       getWeatherDetails();
     }
-  }, [latitude, longitude])
+  }, [latitude, longitude, searchCity])
+
+  console.log(searchCity)
 
   return (
     <div className={day === "day" ? "app-container day-image" : "app-container night-image"} >
