@@ -1,8 +1,9 @@
 import React from "react";
+import { useGlobalStateContext } from "../Context/StateProvider";
 import './HourlyForecast.css'
 
-const HourlyForecast = ({result, day}) => {
-
+const HourlyForecast = () => {
+    const {result, day} = useGlobalStateContext();
     return (
         <div className={day === "day"? "hourlyforecast-container day-color" : "hourlyforecast-container night-color"}>
             <div className="header-hourly">HOURLY FORECAST</div>

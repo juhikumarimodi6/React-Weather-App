@@ -7,17 +7,12 @@ import AdditionalDetails from './Component/AdditionalDetails';
 import GetGeoLocation from './Component/GetGeoLocation';
 import GetLanLon from './Component/GetLanLon';
 import GetWeatherDetails from './Component/GetWeatherDetails';
+import { useGlobalStateContext } from './Context/StateProvider';
 import './App.css';
 
 function App() {
 
-  const [input, setInput] = React.useState("")
-  const [searchCity, setSearchCity] = React.useState()
-  const [result, setResult] = React.useState("")
-  const [day, setDay] = React.useState();
-  const [latitude, setLatitude] = React.useState(0)
-  const [longitude, setLongitude] = React.useState(0)
-  const [loading, setLoading] = React.useState(false)  
+  const {searchCity, result, setResult, day, setDay, latitude, setLatitude, longitude, setLongitude, setLoading} = useGlobalStateContext();
 
   const getGeoLocation = () => searchCity ? GetLanLon(searchCity, setLatitude, setLongitude) 
                                             : GetGeoLocation(setLatitude, setLongitude, latitude, longitude) ;
@@ -34,26 +29,13 @@ function App() {
   return (
     <div className={day === "day" ? "app-container day-image" : "app-container night-image"} >
       {result !== ""  && latitude && longitude ? 
-      <><Header 
-        setLoading = {setLoading}
-        day = {day}
-        input = {input}
-        setInput = {setInput}
-        setSearchCity = {setSearchCity}
-        latitude={latitude}
-        longitude={longitude}
-      />
-      <WeatherDetails 
-        result = {result}
-      />
-      <HourlyForecast
-        result = {result}
-        day = {day}
-      /> 
-      <AdditionalDetails 
-        result = {result}
-        day = {day}
-      /></>: <div className='loading'>Fetching data, Loading...</div> }
+      <>
+        <Header />
+        <WeatherDetails />
+        <HourlyForecast /> 
+        <AdditionalDetails />
+      </>
+      : <div className='loading'>Fetching data, Loading...</div> }
     </div>
   );
 }

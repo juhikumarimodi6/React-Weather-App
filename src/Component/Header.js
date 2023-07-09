@@ -1,11 +1,12 @@
 import React from "react";
 // import CityApiTestData from "./CityApiTestData";
 import SearchBar from './SearchBar'
+import { useGlobalStateContext } from "../Context/StateProvider";
 import './Header.css'
 
 
-const Header = ({setLoading, day, input, setInput, setSearchCity, latitude, longitude}) => {
-
+const Header = () => {
+    const {setLoading, day, input, setInput, setSearchCity, latitude, longitude} = useGlobalStateContext();
     let name, state, country;
     const [city, setCity] = React.useState("")
 

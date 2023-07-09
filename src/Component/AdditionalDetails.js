@@ -1,8 +1,10 @@
 import React from "react";
 import GetTime from "./GetTime";
 import './AdditionalDetails.css'
+import { useGlobalStateContext } from "../Context/StateProvider";
 
-const AdditionalDetails = ({result, day}) => {
+const AdditionalDetails = () => {
+    const {result, day} = useGlobalStateContext();
 
     let sunrise = result.city.sunrise * 1000 + 198000000;
     let sunset = result.city.sunset * 1000 + 198000000;

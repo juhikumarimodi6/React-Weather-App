@@ -1,8 +1,10 @@
 import React from "react";
 import { HiSearch } from "react-icons/hi";
+import { useGlobalStateContext } from "../Context/StateProvider";
 import './SearchBar.css'
 
-const SearchBar = ({input, setInput, setSearchCity}) => {
+const SearchBar = () => {
+    const {input, setInput, setSearchCity} = useGlobalStateContext();
     const handleInput = (event) => {
         setInput(event.target.value)
     }

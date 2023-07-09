@@ -1,8 +1,10 @@
 import React from "react";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
+import { useGlobalStateContext } from "../Context/StateProvider";
 import './WeatherDetails.css'
 
-const WeatherDetails = ({result}) => {
+const WeatherDetails = () => {
+    const {result} = useGlobalStateContext();
 
     const dayArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     const date = new Date();
