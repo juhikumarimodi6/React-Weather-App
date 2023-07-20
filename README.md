@@ -26,7 +26,7 @@ The Weather App is a React-based application that provides users with current we
 
 ## Demo
 
-You can watch the demo of the Weather App [here](https://github.com/juhikumarimodi6/React-todo-list/blob/main/Todo-list-video.webm).
+You can watch the demo of the Weather App [here](https://github.com/juhikumarimodi6/React-Weather-App/blob/main/weatherapp.webm).
 
 ## Installation
 
