@@ -1,18 +1,26 @@
 .search-container {
+    box-sizing: border-box;
     display: flex;
     justify-content: end;
     border: solid;
+    /* padding:1%; */
     /* width: 25vw; */
     /* margin: auto; */
     margin: 1%;
     border-radius: 5px;
     /* display: none; */
+    color:white;
+}
+
+form {
+    display: flex;
+    align-items: center;
 }
 
 .search-input {
     margin:0px;
     border:none;
-    width:10vw;
+    width:100%;
 }
 
 .search-icons {
@@ -27,6 +35,6 @@
 
 @media only screen and (max-width:400px) {
     .search-input {
-        width:60vw;
+        width:100%;
     }
 }

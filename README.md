@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Weather App thumbnail](thumbnail_weatherapp.png)
 
-## Available Scripts
+The Weather App is a React-based application that provides users with current weather condition details and hourly forecasts to prepare them for upcoming weather conditions. It offers various features to enhance the user experience and make weather information easily accessible.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **Current Weather Display**: View the current weather details at your location.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Location-Based Weather**: Enter a city name in the input box to search for weather details of a specific location.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Geolocation**: Utilize geolocation to automatically fetch weather details based on your current latitude and longitude.
 
-### `npm test`
+4. **Weather Icons**: Use weather icons to provide visual representation of weather conditions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. **Hourly Forecast**: Check the hourly weather forecast to plan your day effectively.
 
-### `npm run build`
+6. **Day/Night Background Image**: Enjoy dynamic background images based on the time of day.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7. **Loading Indicators**: Informative loading indicators while fetching API data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+8. **Responsive Design**: The app is designed to be responsive and usable on screen sizes larger than 200px.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+9. **Additional Weather Details**: Find additional weather information like sunrise, sunset, humidity, and visibility.
 
-### `npm run eject`
+## Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You can watch the demo of the Weather App [here](https://github.com/juhikumarimodi6/React-todo-list/blob/main/Todo-list-video.webm).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To run the Todo List App locally, follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone this repository or download the project files from GitHub.
 
-## Learn More
+2. Open your terminal and navigate to the project directory.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install the required node modules using the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm install
+   ```
 
-### Code Splitting
+4. Start the development server with the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm start
+   ```
 
-### Analyzing the Bundle Size
+5. The app should now be running on your local server. Open your web browser and access it at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
 
-### Making a Progressive Web App
+By default, the Weather App displays the current weather details of your present location. You can search for weather details of any desired location by typing the city name in the search input box. The app also provides hourly weather details and additional information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technologies Used
 
-### Advanced Configuration
+The Weather App is built using the following technologies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React.js (v18.2)
+- CSS
+- React hooks (useState, useContext)
+- Geolocation
+- Library: [react](https://react.dev/learn), [react-icons](https://react-icons.github.io/react-icons/)
 
-### Deployment
+## API Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The Weather App relies on the following OpenWeatherMap API endpoints:
 
-### `npm run build` fails to minify
+- To get weather details: `https://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&appid={API_KEY}&units=metric&cnt=20`
+- To get city name in the header: `http://api.openweathermap.org/geo/1.0/reverse?lat={latitude}&lon={longitude}&limit=1&appid={API_KEY}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
+
+![Weather App Screenshot]( weatherapp_screenshot.PNG)
+
+## Contributing
+
+Thank you for considering contributing to the Todo List App! If you find any bugs, have feature requests, or want to submit pull requests, please follow these guidelines:
+
+- Before reporting a bug, check the existing issues to see if it has been reported already.
+- When submitting a bug report or feature request, provide detailed information and steps to reproduce the issue.
+- For pull requests, explain the changes you made and ensure that the app's functionality and existing tests remain intact.
+
+## Contact Information
+
+Feel free to reach out to me by email at juhikumarimodi6@gmail.com if you have any questions, suggestions, or feedback.
+
+---

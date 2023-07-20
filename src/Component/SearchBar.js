@@ -24,19 +24,18 @@ const SearchBar = () => {
 
     return (
         <div className="search-container">
-            <input 
-                type = 'text'
-                placeholder="Search City..."
-                value = {input}
-                onChange={(event) => handleInput(event)}
-                onKeyDown={(event) => handleEnter(event)}
-                className="search-input"
-            />
-            <HiSearch 
-                className="search-icons" 
-                onClick={UpdateCity}
-            />
-
+                <input 
+                    type = 'text'
+                    placeholder="Search City..."
+                    value = {input}
+                    onChange={(event) => handleInput(event)}
+                    onKeyDown={(event) => handleEnter(event)}
+                    className="search-input"
+                />
+                <HiSearch 
+                    className="search-icons" 
+                    onClick={UpdateCity}
+                />
         </div>
     )
 }
