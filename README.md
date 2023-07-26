@@ -4,7 +4,7 @@
 
 The Weather App is a React-based application that provides users with current weather condition details and hourly forecasts to prepare them for upcoming weather conditions. It offers various features to enhance the user experience and make weather information easily accessible.
 
-![Weather App thumbnail](thumbnail_weatherapp.png)
+![Weather App Screenshot]( weatherapp_screenshot.PNG)
 
 
 ## Demo
@@ -79,9 +79,6 @@ The Weather App relies on the following OpenWeatherMap API endpoints:
 - To get weather details: `https://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&appid={API_KEY}&units=metric&cnt=20`
 - To get city name in the header: `http://api.openweathermap.org/geo/1.0/reverse?lat={latitude}&lon={longitude}&limit=1&appid={API_KEY}`
 
-## Screenshots
-
-![Weather App Screenshot]( weatherapp_screenshot.PNG)
 
 ## Contributing
 
